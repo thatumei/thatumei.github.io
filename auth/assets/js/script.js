@@ -16,7 +16,7 @@ async function login(event) {
 
         // 3. Await the JSON parsing
         const users = await response.json();
-        
+
         // 4. Find the user
         const user = users.find(u => u.username === username);
 
@@ -26,7 +26,9 @@ async function login(event) {
         }
 
         // Login Success
-        document.cookie = `auth_token=${username}_token; path=/; samesite=lax`;
+        // 安全性を高めたクッキー保存（HTTPS環境なら Secure も追加）
+        const isSecure = location.protocol === 'https:' ? '; secure' : '';
+        document.cookie = `auth_token=${username}_token; path=/; max-age=604800; samesite=lax${isSecure}`;
         window.location.href = '../home/';
 
     } catch (error) {

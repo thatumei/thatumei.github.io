@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Cookieを削除（有効期限を過去に設定）
                 // サーバー側のパス設定に合わせて path=/ を指定するのが確実です
                 document.cookie = "auth_token=; path=/; max-age=0; samesite=lax";
-                document.cookie = "user_session=; path=/; max-age=0; samesite=lax";
 
                 console.log('Cookieを削除しました。ログイン画面へ遷移します。');
                 
