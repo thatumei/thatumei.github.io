@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豊田少年少女発明クラブ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <header class="global-header">
+        <div class="inner">
+            <div class="brand">豊田少年少女発明クラブ</div>
+            <div class="flex items-center space-x-8">
+                <button class="logout-button" id="logout-trigger">
+                    <i data-lucide="log-out" class="w-4 h-4 mr-2"></i>
+                    <span>ログアウト</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="content-grid">
+            <div class="card red" id="vod-system">
+                <div class="card-icon"><i data-lucide="play-circle" class="w-14 h-14 icon-color"></i></div>
+                <div class="card-title">VODシステム</div>
+            </div>
+
+            <div class="card disabled">
+                <div class="card-icon"><i data-lucide="minus-circle" class="w-14 h-14 icon-color"></i></div>
+                <div class="card-title">項目未定</div>
+            </div>
+
+            <div class="card disabled">
+                <div class="card-icon"><i data-lucide="minus-circle" class="w-14 h-14 icon-color"></i></div>
+                <div class="card-title">項目未定</div>
+            </div>
+
+            <div class="card disabled">
+                <div class="card-icon"><i data-lucide="minus-circle" class="w-14 h-14 icon-color"></i></div>
+                <div class="card-title">項目未定</div>
+            </div>
+        </div>
+
+        <div class="sub-menu-section">
+            <h3 class="sub-section-title">その他のメニュー</h3>
+            <div class="sub-grid">
+                <div class="sub-card disabled-sub">
+                    <i data-lucide="minus" class="w-5 h-5 text-gray-300"></i>
+                    <span>未設定</span>
+                </div>
+                <div class="sub-card disabled-sub">
+                    <i data-lucide="minus" class="w-5 h-5 text-gray-300"></i>
+                    <span>未設定</span>
+                </div>
+                <div class="sub-card disabled-sub">
+                    <i data-lucide="minus" class="w-5 h-5 text-gray-300"></i>
+                    <span>未設定</span>
+                </div>
+                <div class="sub-card disabled-sub">
+                    <i data-lucide="minus" class="w-5 h-5 text-gray-300"></i>
+                    <span>未設定</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="global-footer">
+        <p>© 豊田少年少女発明クラブ All Rights Reserved.</p>
+        <p>このサイトはSnakeWolfにより提供・管理されております</p>
+        <div class="footer-links">
+            <a href="../tos.html" target="_blank" rel="noopener noreferrer">利用規約</a>
+            <span>｜</span>
+            <a href="../privacy.html" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

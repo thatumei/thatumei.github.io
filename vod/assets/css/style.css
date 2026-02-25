@@ -1,0 +1,739 @@
+/* =============================================
+   豊田少年少女発明クラブ VODシステム 
+   サイドバーレイアウト & 検索バー最適化スタイル
+   ============================================= */
+
+:root {
+    --primary-red: #EF3B3A;
+    --bg-body: #f0f4f7;
+    --bg-sidebar: #ffffff;
+    --text-main: #333333;
+    --text-sub: #666666;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.06);
+
+    /* 教科別パステルカラー (サイドバー用) */
+    --sub-rika: #e3f2fd;
+    --txt-rika: #1976d2;
+    --sub-shakai: #fff9c4;
+    --txt-shakai: #fbc02d;
+    --sub-kokugo: #fce4ec;
+    --txt-kokugo: #d81b60;
+    --sub-sansu: #e8f5e9;
+    --txt-sansu: #388e3c;
+    --sub-seikatsu: #f1f8e9;
+    --txt-seikatsu: #689f38;
+    --sub-doutoku: #fff3e0;
+    --txt-doutoku: #f57c00;
+    --sub-ongaku: #f3e5f5;
+    --txt-ongaku: #7b1fa2;
+    --sub-taiiku: #e0f2f1;
+    --txt-taiiku: #00796b;
+    --sub-zukou: #efebe9;
+    --txt-zukou: #5d4037;
+    --sub-gijutsu: #eceff1;
+    --txt-gijutsu: #455a64;
+    --sub-katei: #fbe9e7;
+    --txt-katei: #d84315;
+    --sub-sougou: #e8eaf6;
+    --txt-sougou: #3f51b5;
+    --sub-eigo: #ede7f6;
+    --txt-eigo: #512da8;
+    --sub-tokukatsu: #f9fbe7;
+    --txt-tokukatsu: #afb42b;
+    --sub-tokushien: #fce4ec;
+    --txt-tokushien: #c2185b;
+    --sub-sonota: #f5f5f5;
+    --txt-sonota: #616161;
+}
+
+body {
+    background-color: var(--bg-body);
+    font-family: "Hiragino Sans", "Meiryo", sans-serif;
+    margin: 0;
+    color: var(--text-main);
+}
+
+/* --- ヘッダー（検索バー含む） --- */
+.global-header {
+    background: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.global-header .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.brand {
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+.brand span {
+    color: var(--primary-red);
+}
+
+.header-search {
+    display: flex;
+    background: #f0f4f7;
+    border-radius: 25px;
+    padding: 5px 15px;
+    width: 350px;
+}
+
+.header-search input {
+    border: none;
+    background: transparent;
+    padding: 8px;
+    width: 100%;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.header-search button {
+    border: none;
+    background: transparent;
+    color: var(--text-sub);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* --- メインレイアウト（サイドバー + コンテンツ） --- */
+.main-layout {
+    display: flex;
+    max-width: 1300px;
+    margin: 30px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* サイドバー */
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;
+}
+
+.filter-group {
+    background: var(--bg-sidebar);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-soft);
+}
+
+.filter-group h3 {
+    font-size: 0.95rem;
+    margin: 0 0 15px 0;
+    color: var(--text-sub);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 学年セレクトボックス */
+.select-wrapper select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    background: #f0f4f7;
+    font-weight: bold;
+    color: var(--text-main);
+    cursor: pointer;
+    outline: none;
+}
+
+/* 縦並び教科リスト */
+.subject-list-vertical {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subject-list-vertical li {
+    margin-bottom: 5px;
+}
+
+.subject-list-vertical li a {
+    text-decoration: none;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.subject-list-vertical li i {
+    width: 24px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* --- 教科別アクティブ/ホバー色の定義 --- */
+
+/* 共通：ホバー・アクティブ時の基本挙動 */
+.subject-list-vertical li a:hover,
+.subject-list-vertical li.active a {
+    transform: translateX(5px);
+    /* 少し右にずれて選択感を出します */
+}
+
+/* 個別カラー設定 */
+/* すべて */
+[data-subject="すべて"].active a,
+[data-subject="すべて"] a:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* 理科 */
+.sub-rika.active a,
+.sub-rika a:hover {
+    background: var(--sub-rika);
+    color: var(--txt-rika);
+}
+
+/* 社会 */
+.sub-shakai.active a,
+.sub-shakai a:hover {
+    background: var(--sub-shakai);
+    color: var(--txt-shakai);
+}
+
+/* 国語 */
+.sub-kokugo.active a,
+.sub-kokugo a:hover {
+    background: var(--sub-kokugo);
+    color: var(--txt-kokugo);
+}
+
+/* 算数・数学 */
+.sub-sansu.active a,
+.sub-sansu a:hover {
+    background: var(--sub-sansu);
+    color: var(--txt-sansu);
+}
+
+/* 生活 */
+.sub-seikatsu.active a,
+.sub-seikatsu a:hover {
+    background: var(--sub-seikatsu);
+    color: var(--txt-seikatsu);
+}
+
+/* 道徳 */
+.sub-doutoku.active a,
+.sub-doutoku a:hover {
+    background: var(--sub-doutoku);
+    color: var(--txt-doutoku);
+}
+
+/* 音楽 */
+.sub-ongaku.active a,
+.sub-ongaku a:hover {
+    background: var(--sub-ongaku);
+    color: var(--txt-ongaku);
+}
+
+/* 体育 */
+.sub-taiiku.active a,
+.sub-taiiku a:hover {
+    background: var(--sub-taiiku);
+    color: var(--txt-taiiku);
+}
+
+/* 図工 */
+.sub-zukou.active a,
+.sub-zukou a:hover {
+    background: var(--sub-zukou);
+    color: var(--txt-zukou);
+}
+
+/* 技術 */
+.sub-gijutsu.active a,
+.sub-gijutsu a:hover {
+    background: var(--sub-gijutsu);
+    color: var(--txt-gijutsu);
+}
+
+/* 家庭 */
+.sub-katei.active a,
+.sub-katei a:hover {
+    background: var(--sub-katei);
+    color: var(--txt-katei);
+}
+
+/* 総合 */
+.sub-sougou.active a,
+.sub-sougou a:hover {
+    background: var(--sub-sougou);
+    color: var(--txt-sougou);
+}
+
+/* 英語 */
+.sub-eigo.active a,
+.sub-eigo a:hover {
+    background: var(--sub-eigo);
+    color: var(--txt-eigo);
+}
+
+/* 特別活動 */
+.sub-tokukatsu.active a,
+.sub-tokukatsu a:hover {
+    background: var(--sub-tokukatsu);
+    color: var(--txt-tokukatsu);
+}
+
+/* 特別支援 */
+.sub-tokushien.active a,
+.sub-tokushien a:hover {
+    background: var(--sub-tokushien);
+    color: var(--txt-tokushien);
+}
+
+/* その他 */
+.sub-sonota.active a,
+.sub-sonota a:hover {
+    background: var(--sub-sonota);
+    color: var(--txt-sonota);
+}
+
+/* --- 動画カード内の教科バッジ（動的カラー連動） --- */
+/* JSで付与されるクラス名(tag-rika等)に対応 */
+.tag-rika {
+    background: var(--sub-rika);
+    color: var(--txt-rika);
+}
+
+.tag-shakai {
+    background: var(--sub-shakai);
+    color: var(--txt-shakai);
+}
+
+.tag-kokugo {
+    background: var(--sub-kokugo);
+    color: var(--txt-kokugo);
+}
+
+.tag-sansu {
+    background: var(--sub-sansu);
+    color: var(--txt-sansu);
+}
+
+.tag-seikatsu {
+    background: var(--sub-seikatsu);
+    color: var(--txt-seikatsu);
+}
+
+.tag-doutoku {
+    background: var(--sub-doutoku);
+    color: var(--txt-doutoku);
+}
+
+.tag-ongaku {
+    background: var(--sub-ongaku);
+    color: var(--txt-ongaku);
+}
+
+.tag-taiiku {
+    background: var(--sub-taiiku);
+    color: var(--txt-taiiku);
+}
+
+.tag-zukou {
+    background: var(--sub-zukou);
+    color: var(--txt-zukou);
+}
+
+.tag-gijutsu {
+    background: var(--sub-gijutsu);
+    color: var(--txt-gijutsu);
+}
+
+.tag-katei {
+    background: var(--sub-katei);
+    color: var(--txt-katei);
+}
+
+.tag-sougou {
+    background: var(--sub-sougou);
+    color: var(--txt-sougou);
+}
+
+.tag-eigo {
+    background: var(--sub-eigo);
+    color: var(--txt-eigo);
+}
+
+.tag-tokukatsu {
+    background: var(--sub-tokukatsu);
+    color: var(--txt-tokukatsu);
+}
+
+.tag-tokushien {
+    background: var(--sub-tokushien);
+    color: var(--txt-tokushien);
+}
+
+.tag-sonota {
+    background: var(--sub-sonota);
+    color: var(--txt-sonota);
+}
+
+/* --- コンテンツエリア --- */
+.content-main {
+    flex-grow: 1;
+}
+
+.category-header h2 {
+    font-size: 1.5rem;
+    margin: 0 0 20px 0;
+    font-weight: 900;
+}
+
+/* ビデオグリッド */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* 動画カード（前回の設定を継承・微調整） */
+.video-card {
+    background: white;
+    border-radius: 18px;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+
+.thumb-container {
+    position: relative;
+    aspect-ratio: 16 / 9;
+}
+
+.thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.subject-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin-right: 5px;
+}
+
+.grade-row {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--text-sub);
+}
+
+/* 詳細ページのレイアウト調整 */
+.detail-page .inner {
+    max-width: 900px;
+    /* 読みやすいように少し絞る（YouTubeサイズに合わせる） */
+    margin: 0 auto;
+    /* 中央寄せ */
+    padding: 40px 20px;
+    /* 上下に40px、左右に20pxの余白を確保 */
+}
+
+/* ヘッダーも端に寄らないように調整 */
+.global-header .inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px !important;
+}
+
+/* 動画プレイヤーのサイズを安定させる */
+.video-player-wrapper {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* 情報セクションの余白 */
+.video-info-section {
+    padding: 0 10px;
+    /* 中身が枠ギリギリにならないように */
+}
+
+/* 動画プレイヤーのコンテナ：幅を100%にし、比率を維持 */
+.video-player-wrapper {
+    width: 100%;
+    /* aspect-ratio が効かない古いブラウザ向けの対策も含め、16:9を維持 */
+    aspect-ratio: 16 / 9; 
+    background: #000;
+    border-radius: 12px; /* 少し角を丸くすると馴染みます */
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+/* iframe自体をコンテナいっぱいに広げる */
+.video-player-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* 外枠を消す */
+}
+
+/* ページ全体の余白を再調整（端に寄りすぎないように） */
+.detail-page .inner {
+    max-width: 1000px; /* 動画が大きすぎず小さすぎない絶妙なサイズ */
+    margin: 0 auto;
+    padding: 30px 20px; /* 左右に20pxの安全な余白を確保 */
+    box-sizing: border-box;
+}
+
+.video-info-section h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.meta-info {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.info-item .label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-sub);
+    margin-bottom: 5px;
+}
+
+.info-item .value {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.separator {
+    border: none;
+    border-top: 1px solid #e0e6ed;
+    margin: 30px 0;
+}
+
+/* 垂線 (垂直セパレーター) */
+.vertical-separator {
+    border: none;
+    border-left: 4px solid var(--primary-red);
+    height: 40px;
+    margin: 40px 0 20px 0;
+}
+
+.description-block p {
+    line-height: 1.8;
+    color: #444;
+}
+
+.link-list {
+    list-style: none;
+    padding: 0;
+}
+
+.link-list li a {
+    color: var(--txt-rika);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.link-list li a:hover {
+    text-decoration: underline;
+}
+
+/* 箇条書き（ねらい）のスタイル */
+.description-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.description-block ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* 箇条書きのドットをクラブカラーのチェックや丸にする */
+.description-block ul li::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    color: var(--primary-red);
+    font-size: 0.8rem;
+    top: 0.1rem;
+}
+
+/* 教材リンクのリスト */
+.link-list li {
+    margin-bottom: 12px;
+}
+
+.link-list li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: 0.2s;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.link-list li a:hover {
+    background: var(--bg-body);
+    transform: translateX(5px);
+    box-shadow: none;
+}
+
+.link-list li a i {
+    color: var(--primary-red);
+}
+
+.close-button {
+    font-size: 1.5rem;
+    color: var(--text-sub);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.close-button:hover {
+    color: var(--primary-red);
+}
+
+/* =============================================
+   スマホ・タブレット対応 (Responsive)
+   ============================================= */
+
+@media (max-width: 992px) {
+
+    /* メインレイアウトを縦並びに変更 */
+    .main-layout {
+        flex-direction: column;
+        margin: 15px auto;
+        gap: 15px;
+    }
+
+    /* サイドバーを全幅にし、中身を横並びのスクロールに変更 */
+    .sidebar {
+        width: 100%;
+    }
+
+    .filter-group {
+        padding: 15px;
+        margin-bottom: 10px;
+    }
+
+    /* 教科リストを横スクロール形式に */
+    .subject-list-vertical {
+        display: flex;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 10px;
+        -webkit-overflow-scrolling: touch;
+        /* iOS用スムーズスクロール */
+    }
+
+    /* 横スクロール時のスクロールバーを非表示（任意） */
+    .subject-list-vertical::-webkit-scrollbar {
+        display: none;
+    }
+
+    .subject-list-vertical li {
+        margin-bottom: 0;
+        flex-shrink: 0;
+        /* 折り返しを防止 */
+    }
+
+    .subject-list-vertical li a {
+        white-space: nowrap;
+        /* テキストの改行を防止 */
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+
+    /* スマホでは「右にずれる」演出を解除し、少し浮く演出に変更 */
+    .subject-list-vertical li a:hover,
+    .subject-list-vertical li.active a {
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 600px) {
+
+    /* ヘッダーの調整 */
+    .global-header .inner {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .header-search {
+        width: 75%;
+        /* 検索バーを画面いっぱいに */
+    }
+
+    .brand {
+        font-size: 1.2rem;
+    }
+
+    .close-button {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1.2rem;
+    }
+    
+    /* 動画グリッドを2列、または1列に */
+    .video-grid {
+        grid-template-columns: 1fr;
+        /* スマホなら1列が最も見やすい */
+        gap: 15px;
+    }
+
+    .category-header h2 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+
+    .video-card:hover {
+        transform: none;
+        /* スマホはホバーがないため無効化 */
+    }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動画詳細 | 豊田少年少女発明クラブ VOD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="detail-page">
+
+    <header class="global-header">
+        <div class="inner">
+            <div class="brand">
+                豊田少年少女発明クラブ <span>VOD</span>
+            </div>
+            <i class="fa-solid fa-xmark close-button" onclick="window.close()"></i>
+        </div>
+    </header>
+
+    <main class="detail-container inner">
+        <div class="video-player-wrapper">
+            <div id="player-container">
+            </div>
+        </div>
+
+        <div class="video-info-section">
+            <h1 id="detail-title">読み込み中...</h1>
+
+            <div class="meta-info">
+                <div class="info-item">
+                    <span class="label">対象学年</span>
+                    <span id="detail-grades" class="value">-</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">教科</span>
+                    <div id="detail-subjects" class="tag-row"></div>
+                </div>
+            </div>
+
+            <hr class="separator">
+
+            <div class="description-block">
+                <h3>この教材のねらい</h3>
+                <ul id="detail-aim">
+                </ul>
+            </div>
+
+            <hr class="separator">
+
+            <div class="resource-block">
+                <h3><i class="fa-solid fa-link"></i> 教材リンク</h3>
+                <ul id="resource-links" class="link-list">
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/detail.js"></script>
+</body>
+
+</html>

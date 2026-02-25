@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+:root {
+    --primary-color: #ef3b3a;
+    --text-color: #1f2937;
+    --sub-text: #4b5563;
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden; /* スクロール禁止 */
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: radial-gradient(circle at 50% 50%, #f3f4f6 0%, #e5e7eb 100%);
+    padding: 20px;
+    transition: background 0.3s ease;
+}
+
+.hero-content {
+    max-width: 600px;
+    z-index: 1;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(239, 59, 58, 0.1);
+    color: var(--primary-color);
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--text-color);
+    margin-bottom: 24px;
+}
+
+h1 span {
+    color: var(--primary-color);
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--sub-text);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.cta-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 4px 15px rgba(239, 59, 58, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(239, 59, 58, 0.4);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid #d1d5db;
+}
+
+.btn-secondary:hover {
+    background-color: #f9fafb;
+}
+
+.mini-footer {
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+/* レスポンシブ */
+@media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    .cta-group { flex-direction: column; width: 100%; }
+}

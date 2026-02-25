@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豊田少年少女発明クラブ VODシステム</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-current-subject="すべて">
+
+    <header class="global-header">
+        <div class="inner">
+            <div class="brand">豊田少年少女発明クラブ <span>VOD</span></div>
+            <div class="header-search">
+                <input type="text" id="search-input" placeholder="キーワードでさがす">
+                <button id="search-submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-layout inner">
+        <aside class="sidebar">
+            <div class="filter-group">
+                <h3><i class="fa-solid fa-user-graduate"></i> 学年をえらぶ</h3>
+                <div class="select-wrapper">
+                    <select id="grade-select">
+                        <option value="all">すべての学年</option>
+                        <option value="1">小学1年生</option>
+                        <option value="2">小学2年生</option>
+                        <option value="3">小学3年生</option>
+                        <option value="4">小学4年生</option>
+                        <option value="5">小学5年生</option>
+                        <option value="6">小学6年生</option>
+                        <option value="AD1">AD1</option>
+                        <option value="AD2">AD2</option>
+                        <option value="AD3">AD3</option>
+                        <option value="OM">OM</option>
+                        <option value="Teacher">先生・指導者</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="filter-group">
+                <h3><i class="fa-solid fa-layer-group"></i> 教科をえらぶ</h3>
+                <ul class="subject-list-vertical" id="subject-filter">
+                    <li data-subject="すべて" class="active"><a href="#"><i class="fa-solid fa-border-all"></i>すべて</a></li>
+                    <li data-subject="理科" class="sub-rika"><a href="#"><i class="fa-solid fa-flask"></i>理科</a></li>
+                    <li data-subject="社会" class="sub-shakai"><a href="#"><i class="fa-solid fa-earth-asia"></i>社会</a></li>
+                    <li data-subject="国語" class="sub-kokugo"><a href="#"><i class="fa-solid fa-book-open"></i>国語</a></li>
+                    <li data-subject="算数・数学" class="sub-sansu"><a href="#"><i class="fa-solid fa-calculator"></i>算数・数学</a></li>
+                    <li data-subject="生活" class="sub-seikatsu"><a href="#"><i class="fa-solid fa-seedling"></i>生活</a></li>
+                    <li data-subject="道徳" class="sub-doutoku"><a href="#"><i class="fa-solid fa-heart"></i>道徳</a></li>
+                    <li data-subject="音楽" class="sub-ongaku"><a href="#"><i class="fa-solid fa-music"></i>音楽</a></li>
+                    <li data-subject="体育" class="sub-taiiku"><a href="#"><i class="fa-solid fa-person-running"></i>体育</a></li>
+                    <li data-subject="図工" class="sub-zukou"><a href="#"><i class="fa-solid fa-palette"></i>図工</a></li>
+                    <li data-subject="技術" class="sub-gijutsu"><a href="#"><i class="fa-solid fa-gears"></i>技術</a></li>
+                    <li data-subject="家庭" class="sub-katei"><a href="#"><i class="fa-solid fa-utensils"></i>家庭</a></li>
+                    <li data-subject="総合" class="sub-sougou"><a href="#"><i class="fa-solid fa-magnifying-glass"></i>総合</a></li>
+                    <li data-subject="英語" class="sub-eigo"><a href="#"><i class="fa-solid fa-language"></i>英語</a></li>
+                    <li data-subject="特別活動" class="sub-tokukatsu"><a href="#"><i class="fa-solid fa-users-rectangle"></i>特別活動</a></li>
+                    <li data-subject="特別支援" class="sub-tokushien"><a href="#"><i class="fa-solid fa-handshake-angle"></i>特別支援</a></li>
+                    <li data-subject="その他" class="sub-sonota"><a href="#"><i class="fa-solid fa-ellipsis"></i>その他</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content-main">
+            <div class="category-header">
+                <h2 id="current-category-name">すべての動画</h2>
+            </div>
+            <div class="video-grid" id="video-display">
+                </div>
+        </main>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

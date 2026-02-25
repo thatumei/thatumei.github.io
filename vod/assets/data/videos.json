@@ -1,0 +1,31 @@
+[
+  {
+    "id": "v001",
+    "title": "社会の変化と情報モラル",
+    "subjects": ["社会", "家庭", "総合", "道徳", "体育", "特別活動"],
+    "grades": ["AD1", "AD2", "AD3", "OM"],
+    "ratio": "4:3",
+    "youtubeID": "1Yb46OyhLmQ",
+    "thumbnail": "assets/video/社会の変化と情報モラル.jpg",
+    "duration": "30:00",
+    "aim": [
+      "AIやIoT、ロボットなどの発達で自分たちの暮らしがどのように変化するかについて考える。",
+      "端末を使用した学びのイメージを膨らませ、そこで大切にすべきことを考える。",
+      "端末を活用する際に想定される様々なトラブルについて考える。",
+      "端末を上手に活用するためのルールを考え、それらを守ろうとする。"
+    ],
+    "links": [
+      { "text": "組み立て説明図 (PDF)", "url": "downloads/motor_guide.pdf" },
+      { "text": "材料購入リスト", "url": "https://example.com/shop" }
+    ]
+  },
+  {
+    "id": "v002",
+    "title": "昔の道具しらべ",
+    "subjects": ["社会", "生活"],
+    "grades": ["1", "2", "3"],
+    "ratio": "4:3",
+    "thumbnail": "assets/video/昔の道具しらべ.jpg",
+    "duration": "12:15"
+  }
+]
