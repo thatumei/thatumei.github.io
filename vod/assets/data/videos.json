@@ -15,7 +15,7 @@
       "端末を上手に活用するためのルールを考え、それらを守ろうとする。"
     ],
     "links": [
-      { "text": "組み立て説明図 (PDF)", "url": "downloads/motor_guide.pdf" },
+      { "text": "教材(PDF)", "url": "" },
       { "text": "材料購入リスト", "url": "https://example.com/shop" }
     ]
   },
@@ -28,4 +28,5 @@
     "thumbnail": "assets/video/昔の道具しらべ.jpg",
     "duration": "12:15"
   }
+
 ]
