@@ -15,8 +15,8 @@
       "端末を上手に活用するためのルールを考え、それらを守ろうとする。"
     ],
     "links": [
-      { "text": "教材(pdf)", "url": "https://raw.githubusercontent.com/thatumei/assets/refs/heads/main/GIGAワークブック/アドバンス（2025）/社会の変化と情報モラル｜アドバンスト(2025).pdf" },
-      { "text": "スライド(閲覧のみ)", "url": "https://docs.google.com/presentation/d/1wyJzecJj7JCq_k6no4UA3UyPE1fi90uTYq6ckZFRVEU/edit?usp=sharing" }
+      { "text": "組み立て説明図 (PDF)", "url": "downloads/motor_guide.pdf" },
+      { "text": "材料購入リスト", "url": "https://example.com/shop" }
     ]
   },
   {
@@ -28,5 +28,4 @@
     "thumbnail": "assets/video/昔の道具しらべ.jpg",
     "duration": "12:15"
   }
-
 ]
