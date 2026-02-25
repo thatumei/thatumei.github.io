@@ -6,7 +6,7 @@ let searchKeyword = "";
 // 1. JSONの読み込み
 async function loadVideos() {
     try {
-        const response = await fetch('assets/data/videos.json');
+        const response = await fetch('https://raw.githubusercontent.com/thatumei/assets/refs/heads/main/videos.json');
         videoData = await response.json();
         renderVideos();
     } catch (error) {

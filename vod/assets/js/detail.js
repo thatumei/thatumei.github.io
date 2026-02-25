@@ -8,7 +8,7 @@ async function loadDetail() {
     }
 
     try {
-        const response = await fetch('assets/data/videos.json');
+        const response = await fetch('https://raw.githubusercontent.com/thatumei/assets/refs/heads/main/videos.json');
         const videoData = await response.json();
         const video = videoData.find(v => v.id === videoId);
 
