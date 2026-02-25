@@ -12,6 +12,7 @@
     if (!token) {
       console.warn("認証トークンが見つかりません。リダイレクトします。");
       // ログインページへ強制移動
-      window.location.replace('../login.html'); 
+      window.location.replace('/'); 
     }
+
   })();
